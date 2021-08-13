@@ -55,7 +55,7 @@ Page({
             const notice = res.data
             if (notice[0]) this.setData({ notice: notice[0].notice })
 
-            console.log('顶部轮播信息', this.data.notice)
+            console.log('顶部轮播信息', this.data.notice);
         })
     },
 
@@ -165,7 +165,7 @@ Page({
     onShareAppMessage: function (res) {
         if (res.from === 'button') {
             // 来自页面内转发按钮
-            console.log(res.target)
+            console.log(res.target);
         }
         return {
             title: '这里有好多拼多多券饿了么美团外卖券滴滴花小猪打车券可以领取哦~',

@@ -2,7 +2,7 @@
   "usingComponents": {
     "production": "/components/production/production"
   },
-  "navigationBarTitleText": "多实惠省钱先领券",
+  "navigationBarTitleText": "省钱先领券",
   "enablePullDownRefresh": true,
   "navigationBarBackgroundColor": "#0bb9b6",
   "navigationBarTextStyle": "white",

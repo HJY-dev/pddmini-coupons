@@ -105,7 +105,7 @@ Page({
   onShareTimeline: function (res) {
     return {
       title: '这里有好多拼多多券饿了么美团外卖券滴滴花小猪打车券可以领取哦~',
-      query: '点外卖打车买东西领券多实惠省钱'
+      query: '点外卖打车买东西领券多实惠省钱',
     }
   }
 })

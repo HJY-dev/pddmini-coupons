@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    goods_id: [],
+    goods_sign: [],
     search_id: "",
     detail: null,
   },
@@ -15,10 +15,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.data.goods_id =  options["gid"];
+    this.data.goods_sign =  options["gid"];
     this.data.search_id = options["search_id"];
     this.setData({
-      goods_id: options["gid"],
+      goods_sign: options["gid"],
       search_id: options["search_id"],
     });
     this.reloadData();
@@ -35,11 +35,12 @@ Page({
     wx.showLoading({
       title: '加载中...',
     });
+    
     wx.cloud.callFunction({
       name: "pquery",
       data: {
         detail: true,
-        goods_id_list: `[${this.data.goods_id}]`,
+        goods_sign: `${this.data.goods_sign}`,
         search_id: this.data.search_id,
       }
     })
@@ -65,7 +66,7 @@ Page({
     this.reloadData();
   },
   onShareAppMessage: function(e) {
-    let path = '/pages/detail/detail?gid=' + this.data.goods_id + '&search_id=' + this.data.search_id;
+    let path = '/pages/detail/detail?gid=' + this.data.goods_sign + '&search_id=' + this.data.search_id;
     return {
       title: "这里有好多拼多多券饿了么美团外卖券滴滴花小猪打车券可以领取哦~",
       path: path,
@@ -73,7 +74,7 @@ Page({
     };
   },
   onShareTimeline: function (res) {
-    let path = '/pages/detail/detail?gid=' + this.data.goods_id + '&search_id=' + this.data.search_id;
+    let path = '/pages/detail/detail?gid=' + this.data.goods_sign + '&search_id=' + this.data.search_id;
     return {
       title: '这里有好多拼多多券饿了么美团外卖券滴滴花小猪打车券可以领取哦~',
       path: path,
@@ -83,13 +84,14 @@ Page({
   },
   buy() {
     wx.showLoading({
-      title: '处理中...',
+      title: '处理中123...',
     });
+   
     wx.cloud.callFunction({
       name: "pquery",
       data: {
         generate: true,
-        goods_id_list: `[${this.data.goods_id}]`,
+        goods_sign: `${this.data.goods_sign}`,
         search_id: this.data.search_id,
       }
     }).then(res => {

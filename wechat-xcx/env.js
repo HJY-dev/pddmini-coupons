@@ -1,6 +1,6 @@
 export default {
   // 微信云函数配置
- // wxCloudEnv: "demo-4g5zv6qr65613d1v",
+  wxCloudEnv: "cloud1-9gc9esj5ea9ac5de",
   // 拼多多appid
   pddAppId: "wx32540bd863b27570",
   // 有趣的appid
