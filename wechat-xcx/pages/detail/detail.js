@@ -84,7 +84,7 @@ Page({
   },
   buy() {
     wx.showLoading({
-      title: '处理中123...',
+      title: '处理中...',
     });
    
     wx.cloud.callFunction({
